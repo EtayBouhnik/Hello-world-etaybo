@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Leave Details </title>
+    </head>
+    <body>
+        <strong style="color:blue;font-size: 30px;"> Leave Details</strong>
+    <form>
+        <label for="FullName"> Full Name:<br></label>
+        <input type="text" id="FullName" name="FullName">
+        <br> <br>
+
+        <label for="email"> Email:<br></label>
+        <input type="text" name="email"><br>
+        <br><br>
+
+        <label for="phone">phone number:<br></label>
+        <input type="tel" id="phone" name="phone" >
+        <br><br>
+
+        <label for="start"> Birth Date:<br></label> 
+      
+        <input type="date" name="begin" 
+            placeholder="dd-mm-yyyy" value=""
+            min="1920-01-01" max="2020-11-31"> 
+         <br><br>   
+        <label for="gender"> Gender:<br></label>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label><br>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label><br>
+        <input type="radio" id="other" name="gender" value="other">
+        <label for="other">Other</label>
+        <br><br>
+        
+        <label for="comment"> comment:<br></label>
+        <input type="text" name="comment" size="60"><br><br>
+        <br>
+        <input type="Send" value="Send">
+    </form>
+    </body>
