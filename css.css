@@ -1,0 +1,35 @@
+.item1{grid-area: header;}
+.item2{grid-area: connect;}
+.item3{grid-area: main;}
+.item4{grid-area: side;}
+
+.grid-container {
+    display: grid;
+    justify-content: space-evenly;
+   grid-template-areas: 'header header connect connect'
+    'main main  connect connect'
+    'main main  side side'
+    'main main  side side'
+  ;
+    grid-template-rows: 100px 100px 150px 200px ;
+   grid-template-columns:  100px auto 100px 125px;
+
+   grid-gap: 10px;
+    padding: 10px;
+}
+.item1{
+    background-color: rgb(80, 21, 21);
+}
+.item2{
+    background-color: rgb(200, 218, 255);
+}
+.item3{
+    background-color: rgb(255, 195, 232);
+}
+.item4{
+    background-color: rgb(255, 224, 188);
+}
+
+body{
+    background-color: burlywood;
+}
