@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HW  5</title>
+    <link rel="stylesheet" href=" ">
+    <h1 id="h1a"> Hw for lesson x </h1>
+    <h2 id="h2a"> this text is without javascript</h2>
+
+    <script>
+        {// script without function
+     var x,y;
+            x = 1;
+            y = 5;
+            if (x>y)
+                document.getElementById("h1a").innerHTML= "Hw for lesson  " + x;
+            else
+                document.getElementById("h1a").innerHTML= "Hw for lesson  " + y;   
+        }
+        { // script with function
+            function multiplication(a,b) {
+             return a*b;
+        }
+        document.getElementById("h2a").innerHTML = "my jokes grade is: " + multiplication(5,20);
+
+        }
+    </script>
+</head>
+<body>
+    <p id="P1"> This text was written for the purpose of practicing JavaScript </p>
+    <button type="button" onclick="ChangeText()">translate</button> 
+    <br><br>   
+    <img id="img1" src= "download.jpg" alt=jsmeme width="400px"> 
+    <br>
+    <button type="button" onclick="secondmeme()">Tap for secondmeme</button>
+    <button type="button" onclick="firstmeme()">Tap for firstmeme</button>
+    <script> 
+        {  // button with function that change text.
+            function ChangeText() {
+            document.getElementById("P1").innerHTML = "טקסט נכתב לצורך תרגול ג'אווה סקריפטה";   
+            }
+        }
+        {  // button with function that change attribute.
+            function secondmeme() {
+                document.getElementById('img1').src='download2.jpg'
+            }
+        }
+        {  // button with function that change attribute.
+            function firstmeme() {
+                document.getElementById('img1').src='download.jpg'            }
+        }
+        </script>
+ 
+</body>
+</html>
