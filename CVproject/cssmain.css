@@ -1,0 +1,191 @@
+.resume {
+    display: grid;
+    width  : auto;
+    /* hardcoded purely for codepen example */
+    height: 70.5mm;
+    /* hardcoded purely for codepen example */
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows   : 1fr 1fr 1fr 1fr;
+    box-shadow           : 0 5px 9px 0 rgba(0.35, 0.35, 0.35, 0.35);
+    grid-template-areas  :
+        "photo education"
+        "name work"
+        "about work"
+        "skills community";
+}
+.image{
+    border-radius: 100%;
+    background-color: rgb(195, 224, 248);
+}
+.circle {
+    border          : 2px solid black;
+    background-color: white;
+    height          : 40px;
+    width           : 40px;
+    border-radius   : 50%;
+}
+
+.grid-area {
+    padding: 3em 3em 3em 3em;
+    border : 1px black solid;
+}
+
+.name {
+    grid-area: name;
+    background-color: rgb(195, 224, 248);
+}
+
+.photo {
+    grid-area       : photo;
+    background-color: rgb(195, 224, 248);
+}
+
+.about {
+    grid-area       : about;
+    background-color:rgb(195, 224, 248);
+}
+
+.work {
+    grid-area: work;
+        border : 1px black solid;
+        background: rgb(255, 255, 255);
+}
+
+.skills {
+    grid-area       : skills;
+    background-color:rgb(195, 224, 248);
+}
+
+.education {
+    grid-area       : education;
+    background: rgb(255, 255, 255);
+}
+
+.community {
+    grid-area: community;
+    background: rgb(255, 255, 255);
+}
+
+/* align cv to center of page */
+
+.wrapper {
+    padding       : 0;
+    display       : flex;
+    flex-direction: column;
+    align-items   : center;
+}
+.hbtn {
+    position: relative;
+    box-sizing: border-box;
+    display: inline-block;
+    overflow: hidden;
+    padding: 8px 20px;
+    margin: 0px 3px 6px;
+    text-align: center;
+    border: 2px solid rgb(39, 31, 31);
+    text-decoration: none;
+    color: rgb(39, 31, 31);
+    white-space: nowrap;
+    z-index: 0;
+} 
+
+
+.hbtn i {
+    padding-right: 8px;
+} 
+
+
+.hb-fill-bottom-bg-br::before {
+    position: absolute;
+    content: "";
+    background: rgb(255, 255, 255);
+    transition-duration: 0.3s;
+    z-index: -1;
+    inset: 0px auto auto 0px;
+    width: 100%;
+    height: 0px;
+    opacity: 1;
+    border: 2px solid rgb(255, 255, 255);
+} 
+
+
+.hb-fill-bottom-bg-br:hover::before {
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+} 
+
+
+.hb-fill-bottom-bg-br:hover {
+    color: rgb(0, 0, 0);
+    background: rgb(255, 255, 255);
+    transition: all 0.3s ease 0s;
+} 
+
+html {
+    background:url(unnamed.jpg) no-repeat center center fixed;
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+.glow-on-hover {
+    width: 110px;
+    height: 25px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: gray
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+  
