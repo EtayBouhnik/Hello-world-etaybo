@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+            <link rel="stylesheet" href="{{ url_for('static', filename='ass.css') }}">
+    <head>
+        <title>My Blog</title>
+    </head>
+    <body>
+        <!-- My Skills section start -->
+        <div class="section">
+            {% if name %}
+            <h1><span> {{ name | default('My', true)|upper }} Hobbies</span></h1>
+
+            <ol>
+                <li>Sport:</li>
+                {% for sport1 in sport  %}
+                <h3>{{ sport1 }}</h3>
+                {% endfor %}
+                <hr></hr>
+                <li>Music:</li>
+                            {% for music1 in music  %}
+                <h3>{{ music1 }}</h3>
+                {% endfor %}
+                                    {% block hobbie %}
+
+                <li>Play Video Games.</li>
+    {% endblock %}
+
+                     {% include('include_func.html') %}
+            </ol>
+
+        </div>
+
+
+        <!-- My Skills section end -->
+    {% else  %}
+    <h1>My Hobbies is none of your business</h1>
+    {% endif %}
+
+
+
+    </body>
+</html>

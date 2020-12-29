@@ -1,0 +1,34 @@
+.Contact{
+    text-align: center;
+    font-family: Tahoma, sans-serif;
+    width  : auto;
+    height: auto;
+	color: #eeeaea;
+	background: url('unnamed.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+.buttonbacktoCV {
+	display: inline-block;
+	position: relative;
+	padding: 5px 15px;
+  
+	background-color: #0b1381;
+	color: rgb(250, 243, 243);
+  
+	font-family: sans-serif;
+	text-decoration: none;
+	font-size: 0.9em;
+	text-align: center;
+    text-indent: 15px;
+ 
+}
