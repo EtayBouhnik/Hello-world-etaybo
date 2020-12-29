@@ -29,13 +29,13 @@ p {
     border-radius: 50%;
 }
 .section {
-    background-color: #fff;
+    background-color: blanchedalmond;
     padding: 15px;
     margin-bottom: 10px;
     border-radius: 10px;
 }
 #header {
-    background-image: url(unnamed.jpg) no-repeat center center fixed;;
+    background-image: url('unnamed.jpg') ;
     background-size: cover;
 }
 #header img {
@@ -68,12 +68,12 @@ table, th, td {
     table-layout: fixed;
 }
 .selected {
-    background: url(unnamed.jpg) no-repeat center center fixed;
+    background: url('unnamed.jpg') no-repeat center center fixed;
     font-weight: bold;
     color: white;
 }
 li {
-    margin-bottom: 15px;
+    margin-bottom: 16px;
     font-weight: bold;
 }
 progress {
@@ -83,10 +83,10 @@ progress {
     background: #efefef;
 }
 progress::-webkit-progress-bar {
-    background: url(unnamed.jpg) no-repeat center center fixed;;
+    background: url('unnamed.jpg') no-repeat center center fixed;
 }
 progress::-webkit-progress-value {
-    background: url(unnamed.jpg) no-repeat center center fixed;;
+    background: url('unnamed.jpg') no-repeat center center fixed;
 }
 progress::-moz-progress-bar {
     color: #3fb6b2;
@@ -163,7 +163,7 @@ input, textarea {
     color: grey;
 }
   .html {
-    background:url(unnamed.jpg) no-repeat center center fixed;
+    background:url('unnamed.jpg');
     background-size: cover;
     height: 100%;
     overflow: hidden;

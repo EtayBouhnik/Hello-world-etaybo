@@ -33,7 +33,7 @@ def leave_details_func():
 @app.route('/hobbies')
 def hobbies():
     user = 'etay'
-    return render_template('ass8.html', name=user, sport ={'Football','Handball','Volleyball'})
+    return render_template('assignament8.html', name=user, sport ={'Football','Handball','Volleyball'},music ={'Coldplay','Chriss cornel','Band of horses'})
 
 @app.route('/block')
 def block_func():

@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html>
-            <link rel="stylesheet" href="{{ url_for('static', filename='ass.css') }}">
+            <link rel="stylesheet" href="{{ url_for('static', filename='assignament8.css') }}">
     <head>
-        <title>My Blog</title>
+        <title>My Hobbies</title>
     </head>
     <body>
         <!-- My Skills section start -->
         <div class="section">
             {% if name %}
             <h1><span> {{ name | default('My', true)|upper }} Hobbies</span></h1>
-
             <ol>
                 <li>Sport:</li>
                 {% for sport1 in sport  %}
@@ -17,13 +16,11 @@
                 {% endfor %}
                 <hr></hr>
                 <li>Music:</li>
-                            {% for music1 in music  %}
+                {% for music1 in music  %}
                 <h3>{{ music1 }}</h3>
                 {% endfor %}
-                                    {% block hobbie %}
 
-                <li>Play Video Games.</li>
-    {% endblock %}
+{% extand 'block.html' %}
 
                      {% include('include_func.html') %}
             </ol>
