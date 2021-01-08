@@ -1,0 +1,9 @@
+<body>
+
+    {% if session.Logged_in %}
+    <h2> hello, {{ session.get('username') }}</h2>
+    {% else %}
+    <p> </p>
+    {% endif %}
+
+</body>

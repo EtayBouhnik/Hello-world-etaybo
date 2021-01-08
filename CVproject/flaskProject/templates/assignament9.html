@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <article class="Contact">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> assignment 9 </title>
+</head>
+<body>
+<form method="GET" action="/ass9">
+<p> Enter first name:  <input name="firstname">
+    <input type=submit value="search">
+</form>
+
+
+
+
+    {% if  firstname %}
+       {% for user in users %}
+        {%  if user['firstname'] == firstname %}
+            the user details: <br>
+            ID: {{ user['id'] }},<br>
+            Full name: {{ user['firstname'] }}
+            {{ user['lastname']  }}<br>
+            age: {{ user['age'] }}
+            mail: {{ user['mail'] }}
+            <br>
+        {% endif %}
+        {% endfor %}
+    {% else %}
+       {% for user in users %}
+            full name: {{ user['firstname'] }}
+            {{ user['lastname']  }} , age
+            {{ user['age'] }}, mail
+            {{ user['mail'] }}
+           <br>
+           <br>
+       {% endfor %}
+    {% endif %}
+
+
+{% if username %}
+    <h4> hello, {{ username }}</h4>
+{%  else%}
+  Enter user name and password
+<form action="/ass9" method="POST">
+    <input name="username">
+    <input name="password">
+    <input type=submit>
+</form>
+{% endif %}
+    {% if username %}
+    <br>
+    <form action="/ass9" method="Post">
+    <input type="submit" value="log out" >
+    </form>
+        <br>
+    {% endif %}
+
+    </div>
+{% include('include_func.html') %}
+</body>
+</article>
+</html>
+
