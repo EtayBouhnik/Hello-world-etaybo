@@ -1,0 +1,27 @@
+<header>
+    <h2> Delete user:</h2>
+    <form action="/delete_user" method="GET">
+        user ID: <label><input name="ID" type="text"> </label>
+        <input type="submit">
+    </form>
+
+    <h2> update age by id:</h2>
+    <form action="/update_user" method="GET">
+        user ID: <label><input name="ID" type="text"> </label>
+        Current age: <label><input name="age" type="text"> </label>
+        <input type="submit">
+    </form>
+
+    <h2> List of users</h2>
+    <ul>
+        {% if users %}
+            {% for user in users %}
+                <li>
+                    {{ user.ID }}: <b> {{ user.firstname }} {{ user.lastname }}</b> {{ user.age }} </b> {{ user.mail }}
+                    <br>
+                </li>
+            {% endfor %}
+        {% endif %}
+    </ul>
+
+</header>

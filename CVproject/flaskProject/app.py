@@ -1,7 +1,35 @@
-from flask import Flask,  render_template, url_for, redirect, request, session
+from flask import Flask, render_template, url_for, redirect, request, session, jsonify
+import mysql.connector
+
 
 app = Flask(__name__)
-app.secret_key = '111'
+app.secret_key = '123'
+
+from assignment10.assignment10 import assignment10
+app.register_blueprint(assignment10)
+
+
+def interact_db(query, query_type: str):
+    return_value = False
+    connection = mysql.connector.connect(host='localhost',
+                                         user='root',
+                                         passwd='root',
+                                         database='cv_db')
+    cursor = connection.cursor(named_tuple=True)
+    cursor.execute(query)
+
+    if query_type == 'commit':
+        connection.commit()
+        return_value = True
+
+    if query_type == 'fetch':
+        query_result = cursor.fetchall()
+        return_value = query_result
+
+    connection.close()
+    cursor.close()
+    return return_value
+
 
 @app.route('/')
 def main_func():
@@ -9,6 +37,7 @@ def main_func():
 
 def Etaycv():
     return redirect('cv.html')
+
 def hobbies():
     return render_template('ass8.html')
 
@@ -18,8 +47,10 @@ def Send_massage():
 
 
 @app.route('/Etaycv')
-def Etaycv():
+def Etaycv1():
     return render_template('cv.html')
+
+
 
 
 @app.route('/Contract')

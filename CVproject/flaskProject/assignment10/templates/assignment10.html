@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {%  with messages= get_flashed_messages()%}
+        {% if  messages %}
+            {% for message in messages%}
+            <h2> {{ message }}</h2>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    {% include('insert_user.html') %}
+
+    {% include('userslist.html') %}
+    <br><br>
+    {% include('include_func.html') %}
+
+</body>
+</html>
