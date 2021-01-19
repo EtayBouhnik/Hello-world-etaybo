@@ -103,5 +103,40 @@ def assignament9():
                            request_method=request.method, username=username,
                            firstname=firstname, users=users)
 
+@app.route('/assignment11/users/selected', defaults={'user_id': 315071902})
+@app.route('/assignment11/users/selected/<int:user_id>', methods=['GET'])
+def get_user(user_id):
+    if request.method == 'GET':
+        query = "select * from  users Where id='%s';" % user_id
+        query_result = interact_db(query, query_type='fetch')
+        if len(query_result) == 0:
+            return jsonify({
+                'success': 'False',
+                "data": []
+            })
+        else:
+            return jsonify({
+                'success': 'True',
+                "data": query_result[0]
+            })
+        # return f'Users: {query_result}'
+
+@app.route('/assignment11/users', methods=['GET'])
+def get_users():
+    if request.method == 'GET':
+        query = "select * from users"
+        query_result = interact_db(query, query_type='fetch')
+        return jsonify({
+            'success': 'True',
+            "data": query_result
+        })
+
+@app.route('/users')
+def users():
+    query = "select * from users"
+    query_result = interact_db(query, query_type='fetch')
+    return render_template('users.html', users=query_result)
+
+
 if __name__ == '__main__':
     app.run(debug=True)
